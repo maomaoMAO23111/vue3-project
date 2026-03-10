@@ -1,7 +1,12 @@
 import httpInstance from "@/utils/http";
-export function getBannerAPI() {
+
+export function getBannerAPI(params = {}) {
+  const { distributionSite = "1" } = params;
   return httpInstance({
     url: "https://pcapi-xiaotuxian-front-devtest.itheima.net/home/banner",
+    params: {
+      distributionSite,
+    },
   });
 }
 
